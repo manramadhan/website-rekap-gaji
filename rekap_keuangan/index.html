@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekap Gaji & Keuangan Pribadi</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Rekap Keuangan Pribadi</h1>
+      <p>Catat pemasukan dan pengeluaranmu dengan mudah</p>
+    </header>
+
+    <section class="form-section">
+      <form id="formInput">
+        <div class="form-grid">
+          <input type="date" id="tanggal" required>
+          <input type="text" id="keterangan" placeholder="Keterangan" required>
+          <select id="jenis" required>
+            <option value="Pemasukan">Pemasukan</option>
+            <option value="Pengeluaran">Pengeluaran</option>
+          </select>
+          <input type="text" id="jumlah" placeholder="Jumlah (Rp)" required>
+          <button type="submit" id="tambahBtn">+ Tambah</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="filter-container">
+      <div class="filter-date">
+        <label for="bulan">Bulan:</label>
+        <select id="bulan">
+          <option value="all">Semua</option>
+          <option value="0">Januari</option>
+          <option value="1">Februari</option>
+          <option value="2">Maret</option>
+          <option value="3">April</option>
+          <option value="4">Mei</option>
+          <option value="5">Juni</option>
+          <option value="6">Juli</option>
+          <option value="7">Agustus</option>
+          <option value="8">September</option>
+          <option value="9">Oktober</option>
+          <option value="10">November</option>
+          <option value="11">Desember</option>
+        </select>
+
+        <label for="tahun">Tahun:</label>
+        <select id="tahun">
+          <option value="all">Semua</option>
+        </select>
+      </div>
+
+      <div class="filter-tanggal">
+        <button class="filter-btn" data-tanggal="all">Semua</button>
+        <button class="filter-btn" data-tanggal="5">Tanggal 5</button>
+        <button class="filter-btn" data-tanggal="20">Tanggal 20</button>
+        <button class="filter-btn" data-tanggal="25">Tanggal 25</button>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="summary-card masuk">
+        <h3>Pemasukan</h3>
+        <p id="totalMasuk">Rp 0</p>
+      </div>
+      <div class="summary-card keluar">
+        <h3>Pengeluaran</h3>
+        <p id="totalKeluar">Rp 0</p>
+      </div>
+      <div class="summary-card saldo">
+        <h3>Saldo Akhir</h3>
+        <p id="saldo">Rp 0</p>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Keterangan</th>
+            <th>Jenis</th>
+            <th>Jumlah</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tabelData"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
